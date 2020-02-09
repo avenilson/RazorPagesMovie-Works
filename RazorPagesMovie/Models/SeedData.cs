@@ -8,16 +8,16 @@ namespace RazorPagesMovie.Models
 {
     public static class SeedData
     {
+
         public static void Initialize(IServiceProvider serviceProvider)
         {
             using (var context = new ApplicationDbContext(
                 serviceProvider.GetRequiredService<
                     DbContextOptions<ApplicationDbContext>>()))
             {
-                // Look for any movies.
                 if (context.Movie.Any())
                 {
-                    return; // DB has been seeded
+                    return; 
                 }
 
                 context.Movie.AddRange(
